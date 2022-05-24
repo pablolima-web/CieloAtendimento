@@ -110,7 +110,7 @@ import viewMerchantDomicile from '@salesforce/apex/ATD_VisualMerchantDomicile.vi
                 console.log('This.state.totalPage>> ' + this.totalPage);
                 this.update();
 
-                console.log('=========== Teste v2 =============');
+                console.log('=========== Teste v3 =============');
                  //this.viewMerchantMethod();
 
             })
