@@ -1,0 +1,32 @@
+.paginate{
+    width: 100%;
+    margin: 32px auto;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+div.pagination div{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+
+div.pagination div:not(.numbers),
+div.pagination div.numbers div {
+    width: 40px;
+    height: 40px;
+    /* border: solid 1px black; */
+}
+
+div.pagination div:hover,
+div.pagination div.numbers div.active{
+    color: red;
+}
