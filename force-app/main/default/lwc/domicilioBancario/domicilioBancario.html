@@ -1,0 +1,74 @@
+<template>
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item>
+                <template if:true={view}>
+                    <template if:true={responseData}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout">
+                        <thead>
+                            <tr class="slds-line-height_reset slds-text-align_center">
+                                <th class="slds-text-align_right slds-cell_action-mode" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Name">
+                                        <div class="slds-align_absolute-center" title="Instituição de Liquidação">Instituição de Liquidação</div>
+                                    </a>
+                                </th>
+                                <th class="slds-text-align_center" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Agency">
+                                        <div class="slds-align_absolute-center" title="Agência">Agência</div>
+                                    </a>
+                                </th>
+                                <th class="slds-text-align_center" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Account">
+                                        <div class="slds-align_absolute-center" title="Conta/N° Final do Cartão">Conta/N° Final do Cartão</div>
+                                    </a>
+                                </th>
+                                <th class="slds-text-align_center" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Type">
+                                        <div class="slds-align_absolute-center" title="Tipo">Tipo</div>
+                                    </a>
+                                </th>
+                                <th class="slds-text-align_center" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" name="Status">
+                                        <div class="slds-align_absolute-center" title="Status">Status</div>
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template if:false={notData}>
+                                <template for:each={responseData} for:item="data">
+                                    <tr key={data.bank} class="slds-hint-parent">
+                                        <td data-label="Instituição de Liquidação" scope="row">
+                                            <div class="slds-truncate" align = center>{data.bankName}</div>
+                                        </td>
+                                        <td data-label="Agência" scope="row">
+                                            <div class="slds-truncate" align = center>{data.truncated_agency}</div>
+                                        </td>
+                                        <td data-label="Conta/N° Final do Cartão" scope="row">
+                                            <div class="slds-truncate" align = center>{data.truncated_account}-{data.account_digit}</div>
+                                        </td>
+                                        <td data-label="Tipo" scope="row">
+                                            <div class="slds-truncate" align = center>{data.account_type_description}</div>
+                                        </td>
+                                        <td data-label="Status" scope="row">
+                                            <div class="slds-truncate" align = center>{data.statusDescription}</div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </template>
+                            <template if:true={notData}>
+                                <p class="slds-text-align_center"> Nenhum dado para ser exibido</p>
+                            </template>
+                            </tbody>
+                        </table>
+                    </template>
+                </template>
+
+                <!--Não exibir os dados de acordo com a regra de negocio-->
+                <template if:false={view}>
+                    <p class="slds-text-align_center"></p>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
