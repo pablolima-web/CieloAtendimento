@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="ATN_FAC_Controller" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="formReturn" type="Object" />
+    
+    
+    <aura:attribute name="iframeUrl" type="String" />
+    <aura:attribute name="width" type="String" />
+    <aura:attribute name="height" type="String" />
+    <aura:attribute name="scrolling" type="String" />
+    <aura:attribute name="frameBorder" type="String" />
+    <aura:attribute name="style" type="String" />
+    <aura:attribute name="sandbox" type="String" />
+    
+    <iframe src="{!v.iframeUrl}"
+            width="{!v.width}"
+            height="{!v.height}"
+            style="{!v.style}"
+            frameBorder="{!v.frameBorder}"
+            sandbox="{!v.sandbox}"
+            scrolling="{!v.scrolling}"/>
+    
+</aura:component>
