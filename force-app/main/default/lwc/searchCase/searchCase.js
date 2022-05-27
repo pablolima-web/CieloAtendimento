@@ -47,7 +47,7 @@ import viewMerchantDomicile from '@salesforce/apex/ATD_VisualMerchantDomicile.vi
         @wire(getRecord, { recordId: '$recordId', fields: FIELDS})
         contract({error, data}){
             if(data){
-                console.log('LWC - searchCase');
+                console.log('LWC - searchCase v10');
                 // console.log('Data:>>> ' + JSON.stringify(data));
                 this.contractData = data;
                 console.log('This.contractData:>>> ' + JSON.stringify(this.contractData));
